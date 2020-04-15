@@ -1,0 +1,21 @@
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label>Nom d'utilisateur</label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label>Mot de passe</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" formControlName="date">
+    </div>
+    <button type="submit" class="btn btn-primary">OK</button>
+
+  </form>
+<pre>
+    {{loginForm.value | json  }}
+    {{loginForm.value.date | date :'longDate'}}
+</pre>
